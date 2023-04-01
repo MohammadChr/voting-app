@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: st-voting
+  namespace: voting-app
+spec:
+  selector:
+    matchLabels:
+      app: demo-app
+  resources:
+    requests:
+      storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  volumeName: st-voting
